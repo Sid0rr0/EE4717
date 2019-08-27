@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Tables</title>
+    <title>Time Sheet</title>
     <meta charset="utf-8">
     <style>
         table {
             margin: auto;
-            border: 5px solid #000066;
-            width: 600px;
-            border-spacing: 0;
+            width: 200px;
         }
-        td, th {
-            padding: 5px;
-            font-family: Arial, sans-serif;
+        table, td, th {
             border-style: none;
         }
         caption {
-            font-family: Verdana, sans-serif;
+            font-size: 2em;
             font-weight: bold;
-            font-size: 1.2em;
-            padding-bottom: 5px;
         }
-        tr:nth-of-type(even) {
+        thead {
             background-color: #eaeaea;
         }
-        tr:first-of-type {
-            background-color: #000066;
-            color: #eaeaea;
+        tbody {
+            font-family: Arial, sans-serif;
+            font-size: .90em;
+        }
+        tbody td {
+            border-bottom: 1px #000033 dashed;
+            padding-left: 25px;
+        }
+        tfoot {
+            background-color: #eaeaea;
+            font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <table border="1">
-        <caption>Lighthouse Island Bistor Specialty Coffee Menu</caption>
-        <tr>
-            <th>Specialty Coffee</th>
-            <th>Description</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            <td>Lite Latte</td>
-            <td>Indulge in a shot of organic, locally roasted espresso with steamed, skim milk.</td>
-            <td>$3.50</td>
-        </tr>
-        <tr>
-            <td>Mocha Latte</td>
-            <td>Chocolate loves will enjoy a shot of organic, locally roasted espresso, steamed milk, and your
-                choice of melted dark, milk, or white chocolate.</td>
-            <td>$4.00</td>
-        </tr>
-        <tr>
-            <td>MCP Latte</td>
-            <td>A luscious mocha latte with caramel and pecan syrup.</td>
-            <td>$4.50</td>
-        </tr>
+        <caption>Time Sheet</caption>
+        <thead>
+            <tr>
+                <th id="day">Day</th>
+                <th id="hours">Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td headers="day">Monday</td>
+                <td headers="hours">4</td>
+            </tr>
+            <tr>
+                <td headers="day">Tuesday</td>
+                <td headers="hours">3</td>
+            </tr>
+            <tr>
+                <td headers="day">Wednesday</td>
+                <td headers="hours">5</td>
+            </tr>
+            <tr>
+                <td headers="day">Thursday</td>
+                <td headers="hours">3</td>
+            </tr>
+            <tr>
+                <td headers="day">Friday</td>
+                <td headers="hours">3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td headers="day">Total</td>
+                <td headers="hours">18</td>
+            </tr>
+        </tfoot>
     </table>
 </body>
 </html>
