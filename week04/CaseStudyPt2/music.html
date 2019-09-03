@@ -4,19 +4,20 @@
 	<title>Case Study Part 2</title>
 	<meta charset="utf-8">
 </head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/music.css">
 <body>
 
 <div class="grid-container">
 
 	<div class="item1">
-		<img src="logo.png" alt="logo">
+		<img src="media/logo.png" alt="logo">
 		<!-- picture from https://www2.bc.edu/michael-adjibodou/Home.html -->
 	</div>
 
 	<div class="item2">
 		<ul class="nav-menu">
-			<li><a href="index.html">Home</a></li> <!--&nbsp; -->
+			<li><a href="index.html">Home</a></li>
 			<li><a href="menu.html">Menu</a></li>
 			<li><a href="music.html">Music</a></li>
 			<li><a href="jobs.html">Jobs</a></li>
@@ -25,8 +26,37 @@
 
 	<div class="item3">
 		<h1>Music at JavaJam</h1>
-        <p>The first Friday night each month at JavaJam is a special night. Join us from 8pm to 11px for some music
+        <p>The first Friday night each month at JavaJam is a special night. Join us from 8pm to 11pm for some music
             you won't want to miss.</p>
+
+		<div class="music-container">
+			<div class="month">
+				<h2>JANURY</h2>
+				<img src="media/ajr.jpeg" alt="AJR" id="ajr-pic">
+				<p>The band name "AJR" comes from the first initials of the three brothers, Adam, Jack, and Ryan.
+					Their musical style has been described as "electric", combining elements of pop, doo-wop,
+					electronic, and dubstep.</p>
+				<!-- picture from https://www.youtube.com/channel/UCQ5w3fSomzziZfO7neK7eAg -->
+				<h3>AJR - Dear Winter</h3>
+				<audio controls>
+					<source src="media/AJR%20-%20Dear%20Winter.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+			<div class="month">
+				<h2>FEBRUARY</h2>
+				<img src="media/lumineers.jpeg" alt="Lumineers" id="lumineers-pic">
+				<p>The Lumineers are an American folk rock band based in Denver, Colorado. The Lumineers emerged as
+					one of the most popular folk rock/Americana artists during the revival of those genres and their
+					growing popularity in the 2010s.</p>
+				<!-- picture from https://variety.com/2019/music/news/lumineers-addiction-music-videos-gloria-1203219390/ -->
+				<h3>Lumineers - Gloria</h3>
+				<audio controls>
+					<source src="media/The%20Lumineers%20-%20Gloria.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+		</div>
 
 	</div>
 
