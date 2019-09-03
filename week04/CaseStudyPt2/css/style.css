@@ -116,3 +116,8 @@ input, textarea {
     margin-left: 0;
     padding: 1px 5px;
 }
+
+
+.month img {
+    height: 200px;
+}
