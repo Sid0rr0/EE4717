@@ -6,6 +6,7 @@
 
 body {
     background-color: #E9DBA0;
+    min-width: 620px;
 
 }
 
@@ -71,6 +72,10 @@ body {
 
 .coffee-menu td, tr {
     padding: 10px;
+}
+
+#mail {
+    color: #87521a;
 }
 
 #road {
