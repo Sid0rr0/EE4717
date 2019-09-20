@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
     grid-area: menu;
     background-color: #E2D2B0;
     font-weight: bold;
-
+    min-width: 134px;
     font-size: 25px;
 
     padding: 10px 0;
