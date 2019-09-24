@@ -6,16 +6,8 @@ function addEvent(node, type, callback) {
     }
 }
 
-function shouldBeValidated(field) {
-    return (
-        !(field.getAttribute("readonly") || field.readonly) &&
-        !(field.getAttribute("disabled") || field.disabled) &&
-        (field.getAttribute("pattern") || field.getAttribute("required"))
-    );
-}
-
 function instantValidation(field) {
-    if (shouldBeValidated(field)) {
+    if (field.getAttribute("pattern") || field.getAttribute("required")) {
 
         let invalid =
             (field.getAttribute("required") && !field.value) ||
@@ -41,16 +33,16 @@ function dateValidation(field) {
         const date = field.target.value.split("-");
         const d = new Date();
 
-        let invalid = true;
+        let invalid = false;
 
         //console.log(parseInt((date[1])) + " " + d.getMonth());
 
         if(parseInt(date[0]) < d.getFullYear())
-            invalid = false;
+            invalid = true;
         else if (parseInt(date[1]) < (d.getMonth() + 1) )
-            invalid = false;
+            invalid = true;
         else if (parseInt(date[2]) <= d.getDate())
-            invalid = false;
+            invalid = true;
 
         if (!invalid && field.target.getAttribute("aria-invalid")) {
             field.target.removeAttribute("aria-invalid");
@@ -59,20 +51,5 @@ function dateValidation(field) {
         }
     }
 }
-
-//for ie8
-/*
-var fields = [
-    document.getElementsByTagName("input"),
-    document.getElementsByTagName("textarea")
-];
-for (var a = fields.length, i = 0; i < a; i++) {
-    for (var b = fields[i].length, j = 0; j < b; j++) {
-        addEvent(fields[i][j], "change", function(e, target) {
-            instantValidation(target);
-        });
-    }
-}
-*/
 
 
