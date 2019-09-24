@@ -8,7 +8,6 @@
 body {
     background-color: #E9DBA0;
     min-width: 620px;
-
 }
 
 .item1 {
@@ -22,16 +21,16 @@ body {
     font-weight: bold;
     min-width: 134px;
     font-size: 25px;
-
     padding: 10px 0;
     text-align: center;
-
 }
+
 .item3 {
     grid-area: main;
     background-color: #F5F5DC;
     padding: 10px 30px;
 }
+
 .item4 {
     grid-area: footer;
     background-color: #D2B48C;
@@ -67,17 +66,11 @@ body {
     list-style-type: none;
 }
 
-.coffee-menu {
-    padding: 1px;
-}
-
-.coffee-menu td, tr {
-    padding: 10px;
-}
-
 #mail {
     color: #87521a;
 }
+
+/* -------- index ------------ */
 
 #road {
     background-image: url("../media/winding_road_5.jpg");
@@ -85,7 +78,6 @@ body {
     height: 200px;
     width: 400px;
     margin: 20px;
-
 }
 
 #index-content {
@@ -102,64 +94,6 @@ body {
     margin: 15px;
 }
 
-tr:nth-child(odd) {
-    background-color: #D2B48C;
-}
-
-td:nth-child(odd) {
-   font-weight: bold;
-}
-
-td input {
-    width: 40px;
-    font-size: 15px;
-}
-
-table td {
-    min-width: 40px;
-}
-
-.coffee-menu label {
-    margin: 0;
-    padding: 0;
-    min-width: 150px;
-}
-
-.menuPrice label {
-    display: none;
-}
-
-.menuPrice {
-    vertical-align: center;
-    horiz-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-td > div {
-    text-align: center;
-}
-
-#totalPriceText {
-    text-align: right;
-}
-
-.menuForm {
-    display: flex;
-    flex-flow: row wrap;
-    vertical-align: center;
-}
-
-.menuForm input {
-    vertical-align: middle;
-
-}
-
-#menuTotal {
-    font-size: 30px;
-    font-weight: bold;
-}
-
 /* -------- Form ---------- */
 
 form {
@@ -174,7 +108,6 @@ label {
     text-align: right;
     padding-right: 10px;
     margin-top: 10px;
-
 }
 
 form > input, textarea {
