@@ -3,11 +3,7 @@ function addEvent(node, type, callback) {
         node.addEventListener(type, function(e) {
             callback(e, e.target);
         }, false);
-    } /*else if (node.addEventListener) {
-        node.addEventListener('on' + type, function(e) {
-            callback(e, e.target);
-        });
-    }*/
+    }
 }
 
 function shouldBeValidated(field) {
@@ -45,12 +41,16 @@ function dateValidation(field) {
         const date = field.target.value.split("-");
         const d = new Date();
 
-        let invalid = false;
+        let invalid = true;
 
-        if(parseInt(date[0]) < d.getFullYear() || parseInt(date[1]) < d.getMonth() || parseInt(date[2]) <= d.getDate()){
+        //console.log(parseInt((date[1])) + " " + d.getMonth());
 
-            invalid = true;
-        }
+        if(parseInt(date[0]) < d.getFullYear())
+            invalid = false;
+        else if (parseInt(date[1]) < (d.getMonth() + 1) )
+            invalid = false;
+        else if (parseInt(date[2]) <= d.getDate())
+            invalid = false;
 
         if (!invalid && field.target.getAttribute("aria-invalid")) {
             field.target.removeAttribute("aria-invalid");
@@ -60,6 +60,7 @@ function dateValidation(field) {
     }
 }
 
+//for ie8
 /*
 var fields = [
     document.getElementsByTagName("input"),
