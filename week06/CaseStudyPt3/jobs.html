@@ -5,6 +5,7 @@
     <meta charset="utf-8">
 </head>
 <link rel="stylesheet" href="css/style.css">
+<script rel="javascript" src="js/formValidation.js"></script>
 <body>
 
 <div class="grid-container">
@@ -24,17 +25,26 @@
     </div>
 
     <div class="item3">
-        <h1>Jobs at JavaJam</h1>
+        <h1 id="demo">Jobs at JavaJam</h1>
         <p>Want to work at JavaJam? Fill out the form below to start your application. Required fields are marked
             with asterisk *</p>
 
         <form action="show_post.php" method="post" class="jobs-form">
-            <label for="mynameid">*Name:&nbsp;</label><input type="text" name="myname" id="mynameid" required autofocus>
-            <label for="myemailid">*E-mail:&nbsp;</label><input type="email" name="myemail" id="myemailid" required>
-            <label for="mydateid">Start Date:&nbsp;</label><input type="date" name="mydate" id="mydateid">
-            <label for="mytextareaid">*Experience:&nbsp;</label>
-                <textarea name="experience" id="mytextareaid" rows="4" cols="30" required></textarea>
-            <input type="submit" id="mysubmit" value="Apply Now">
+            <label for="formName">*Name:&nbsp;</label>
+            <input type="text" name="name" id="formName" aria-required="true" required autofocus
+                   pattern="^(\w+-?\w+)(\s{1}\w+-?\w+)+$"> <!-- match any dash in name or surname -->
+
+            <label for="formEmail">*E-mail:&nbsp;</label>
+            <input type="email" name="email" id="formEmail" aria-required="true" required
+                   pattern="^(\w|\.|-)+@([a-z0-9]+\.)+([a-z]{2,3})$">
+
+            <label for="formDate">Start Date:&nbsp;</label>
+            <input type="date" name="date" id="formDate" aria-required="true" onchange="dateValidation(event)">
+
+            <label for="formTextarea">*Experience:&nbsp;</label>
+            <textarea name="experience" id="formTextarea" rows="4" cols="30" aria-required="true" required></textarea>
+
+            <input type="submit" id="formSubmit" value="Apply Now">
         </form>
     </div>
 
@@ -44,5 +54,7 @@
     </div>
 
 </div>
+
+
 </body>
 </html>
