@@ -39,10 +39,9 @@ table td {
 }
 
 .menuPrice {
-    vertical-align: center;
-    horiz-align: center;
     margin: 0;
-    padding: 0;
+    padding-left: 10px;
+    min-width: 80px;
 }
 
 td > div {

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/coffeeMenu.css">
+    <script rel="javascript" src="js/menuPrices.js"></script>
 <body>
 
 <div class="grid-container">
@@ -32,46 +33,48 @@
                     Endless Cup $2.00</td>
                 <td class="menuPrice">
                     <label for="item1"></label>
-                    <input id="item1" type="number" min="0">
+                    <input id="item1" type="number" min="0" onchange="updateItem1(event)">
                 </td>
                 <td class="menuPrice">
-                    <div id="item1Price">0</div>
+                    <div id="item1Price">$0</div>
                 </td>
             </tr>
             <tr>
                 <td>Cafe au Lait</td>
                 <td>House blended coffee infused into a smooth, steamed milk. <br/>
-                    <form action="#" class="menuForm">
-                        <label for="item1Radio"><input type="radio" name="amount" id="item1Radio" value="single" checked="checked">
+                    <form action="#" class="menuForm" >
+                        <label for="item2Radio1"><input type="radio" name="amount" id="item2Radio1" value="single" onchange="updateItem2(event)" checked="checked">
                             Single $2.00</label>
-                        <label for="item2Radio"><input type="radio" name="amount" id="item2Radio" value="double">
+                        <label for="item2Radio2"><input type="radio" name="amount" id="item2Radio2" value="double" onchange="updateItem2(event)">
                             Double $3.00</label>
                     </form>
                 </td>
                 <td class="menuPrice">
                     <label for="item2"></label>
-                    <input id="item2" type="number" min="0">
+                    <input id="item2" type="number" min="0" onchange="updateItem2(event)">
                 </td>
                 <td class="menuPrice">
-                    <div id="item2Price">0</div>
+                    <div id="item2Price">$0</div>
                 </td>
             </tr>
             <tr>
                 <td>Iced Cappuccino</td>
                 <td>Sweetened espresso blended with icy-cold milk and served in chilled glass <br/>
                     <form action="#" class="menuForm">
-                        <label for="item2Radio1"><input type="radio" name="amount" id="item2Radio1" value="single" checked="checked">
+                        <label for="item3Radio1"><input type="radio" name="amount" id="item3Radio1" value="single"
+                                                        checked="checked" onchange="updateItem3(event)">
                             Single $4.75</label>
-                        <label for="item2Radio2"><input type="radio" name="amount" id="item2Radio2" value="double">
+                        <label for="item3Radio2"><input type="radio" name="amount" id="item3Radio2" value="double"
+                                                        onchange="updateItem3(event)">
                             Double $5.75</label>
                     </form>
                 </td>
                 <td class="menuPrice">
                     <label for="item3"></label>
-                    <input id="item3" type="number" min="0">
+                    <input id="item3" type="number" min="0" onchange="updateItem3(event)">
                 </td>
                 <td class="menuPrice">
-                    <div id="item3Price">0</div>
+                    <div id="item3Price">$0</div>
                 </td>
             </tr>
             <tr id="menuTotal">
@@ -80,7 +83,7 @@
                     Total price
                 </td>
                 <td colspan="2" class="menuPrice">
-                    <div id="totalPrice">0</div>
+                    <div id="totalPrice">$0</div>
                 </td>
             </tr>
         </table>
