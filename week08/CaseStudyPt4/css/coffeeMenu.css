@@ -1,0 +1,68 @@
+/* -------------- coffee menu ----------------*/
+form {
+    padding: 5px;
+}
+
+.coffee-menu {
+    padding: 1px;
+}
+
+.coffee-menu td, tr {
+    padding: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: #D2B48C;
+}
+
+td:nth-child(odd) {
+    font-weight: bold;
+}
+
+td input {
+    width: 40px;
+    font-size: 15px;
+}
+
+table td {
+    min-width: 40px;
+}
+
+.coffee-menu label {
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+}
+
+.menuPrice label {
+    display: none;
+}
+
+.menuPrice {
+    margin: 0;
+    padding-left: 10px;
+    min-width: 80px;
+}
+
+td > div {
+    text-align: center;
+}
+
+#totalPriceText {
+    text-align: right;
+}
+
+.menuForm {
+    display: flex;
+    flex-flow: row wrap;
+    vertical-align: center;
+}
+
+.menuForm input {
+    vertical-align: middle;
+}
+
+#menuTotal {
+    font-size: 25px;
+    font-weight: bold;
+}

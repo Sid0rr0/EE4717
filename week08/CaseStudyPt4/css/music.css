@@ -1,0 +1,23 @@
+.music-container {
+    margin: 20px;
+}
+
+.month {
+    min-height: 250px;
+    width: 750px;
+    margin: auto;
+}
+
+.month h2 {
+    background-color: #E2D2B0;
+}
+
+.month img {
+    height: 200px;
+    float: left;
+    margin: 10px;
+}
+
+.month p {
+    margin: 5px;
+}
