@@ -15,7 +15,7 @@ tr:nth-child(odd) {
     background-color: #D2B48C;
 }
 
-td:nth-child(odd) {
+.menuName {
     font-weight: bold;
 }
 
@@ -65,4 +65,10 @@ td > div {
 #menuTotal {
     font-size: 25px;
     font-weight: bold;
+}
+
+.productPriceUpdate {
+    max-width: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
