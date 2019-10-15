@@ -7,25 +7,32 @@ function updateItem1(e) {
     updateTotalPrice();
 }
 
+function multiply (single, double, price, item, itemRadio1, itemRadio2) {
+    if(isNaN(price)) {
+        if(document.getElementById(item).value) {
+            if(document.getElementById(itemRadio1).checked)
+                price = parseFloat(document.getElementById(item).value) * single;
+            else if (document.getElementById(itemRadio2).checked)
+                price = parseFloat(document.getElementById(item).value) * double;
+        } else
+            price = 0
+    }
+    else if(document.getElementById(itemRadio1).checked)
+        price *= single;
+    else if (document.getElementById(itemRadio2).checked)
+        price *= double;
+
+    //console.log(price);
+    return price;
+}
+
 function updateItem2(e) {
     const single = 2;
     const double = 3;
 
     let price = parseFloat(e.target.value);
 
-    if(isNaN(price)) {
-        if(document.getElementById("item2").value) {
-            if(document.getElementById("item2Radio1").checked)
-                price = parseFloat(document.getElementById("item2").value) * single;
-            else if (document.getElementById("item2Radio2").checked)
-                price = parseFloat(document.getElementById("item2").value) * double;
-        } else
-            price = 0
-    }
-    else if(document.getElementById("item2Radio1").checked)
-        price *= single;
-    else if (document.getElementById("item2Radio2").checked)
-        price *= double;
+    price = multiply(single, double, price, "item2", "item2Radio1", "item2Radio2");
 
     document.getElementById("item2Price").innerText = "$" + price;
     updateTotalPrice();
@@ -37,19 +44,7 @@ function updateItem3(e) {
 
     let price = parseFloat(e.target.value);
 
-    if(isNaN(price)) {
-        if(document.getElementById("item3").value) {
-            if(document.getElementById("item3Radio1").checked)
-                price = parseFloat(document.getElementById("item3").value) * single;
-            else if (document.getElementById("item3Radio2").checked)
-                price = parseFloat(document.getElementById("item3").value) * double;
-        } else
-            price = 0
-    }
-    else if(document.getElementById("item3Radio1").checked)
-        price *= single;
-    else if (document.getElementById("item3Radio2").checked)
-        price *= double;
+    price = multiply(single, double, price, "item3", "item3Radio1", "item3Radio2");
 
     document.getElementById("item3Price").innerText = "$" + price;
 
