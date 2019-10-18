@@ -19,9 +19,21 @@ tr:nth-child(odd) {
     font-weight: bold;
 }
 
-td input {
-    width: 40px;
-    font-size: 15px;
+td input[type=number] {
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
+}
+/*
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}*/
+
+td input[type=radio] {
+    width: 20px;
+    height: 20px;
 }
 
 table td {
@@ -29,9 +41,8 @@ table td {
 }
 
 .coffee-menu label {
-    margin: 0;
+    margin: 0 0 0 10px;
     padding: 0;
-    min-width: 150px;
 }
 
 .menuPrice label {
