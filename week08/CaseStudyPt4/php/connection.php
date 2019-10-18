@@ -21,7 +21,10 @@ if ($result->num_rows > 0) {
             echo "\n";
         }
 
-        echo "name: " . $row["coffee_name"] . " - type: " . $row["type"] . "|";
+        echo "name: " . $row["coffee_name"] . " - type: " . $row["type"] . " - ". $row["description"] ."|";
+
+        if($row["description"] == '')
+            echo "aaaaaaa";
 
         $name = $row["coffee_name"];
 

@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS `coffee` CASCADE;
 create table coffee (
                           coffee_id int auto_increment primary key,
                           coffee_name varchar(40) not null,
+                          description varchar(300),
                           type varchar(40) not null,
                           price double not null
 );

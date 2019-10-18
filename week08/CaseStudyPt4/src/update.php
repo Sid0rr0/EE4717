@@ -28,40 +28,47 @@
     <div class="item3">
         <h1>Coffee at JavaJam</h1>
         <table class="coffee-menu">
-            <tr>
-                <td>
-                    <form action="#" class="menuForm" >
-                        <label for="checkbox1"><input type="checkbox" name="amount" id="checkbox1" value="item1"></label>
-                    </form>
-                </td>
-                <td class="menuName">Just Java</td>
-                <td>Regular house blend, decaffeinated coffee, or flavor of the day. <br/>
-                    Endless Cup $2.00</td>
-            </tr>
-            <tr>
-                <td>
-                    <form action="#" class="menuForm" >
-                        <label
-                                for="checkbox2"><input type="checkbox" name="amount" id="checkbox2" value="item2"></label>
-                    </form>
-                </td>
-                <td class="menuName">Cafe au Lait</td>
-                <td>House blended coffee infused into a smooth, steamed milk. <br/>
-                    Single $2.00 Double $3.00
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <form action="#" class="menuForm" >
-                        <label
-                                for="checkbox3"><input type="checkbox" name="amount" id="checkbox3" value="item3"></label>
-                    </form>
-                </td>
-                <td class="menuName">Iced Cappuccino</td>
-                <td>Sweetened espresso blended with icy-cold milk and served in chilled glass <br/>
-                    Single $4.75 Double $5.75
-                </td>
-            </tr>
+            <?php
+                include('../php/credentials.php');
+                $sql = "SELECT * FROM f32ee.coffee";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    $arr = [];
+                    $cnt = 0;
+                    $id = 0;
+                    while($row = $result->fetch_assoc()) {
+
+                        if($row["description"] == '') {
+                            $arr[$cnt] = $row["type"]." $".$row["price"];
+                            $id++;
+                        } else {
+
+                            echo '<tr>
+                                    <td>
+                                        <form action="#" class="menuForm" >
+                                            <label for="checkbox'.$cnt.'"><input type="checkbox" name="amount" id="checkbox'.$cnt.'" value="item'.$cnt.'"></label>
+                                        </form>
+                                    </td>';
+                                echo '<td class="menuName">'.$row["coffee_name"].'</td>';
+                                echo '<td>'.$row["description"].'<br/>';
+                                    foreach( $arr as $value ) {
+                                        echo "$value";
+                                    }
+                                    echo $row["type"]." $".$row["price"];
+                                echo '</td>';
+                            echo "</tr>";
+                            $cnt++;
+                            $id = 0;
+                            $arr = [];
+                        }
+                    }
+                } else {
+                    echo "Sorry, no coffee on the menu.";
+                }
+
+                $conn->close();
+            ?>
         </table>
     </div>
 
