@@ -21,9 +21,9 @@ tr:nth-child(odd) {
 
 td input[type=number] {
     width: 50px;
-    height: 30px;
     font-size: 20px;
 }
+/*hide the arrows*/
 /*
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {

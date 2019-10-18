@@ -4,22 +4,23 @@
     <title>Case Study Part 4</title>
     <meta charset="utf-8">
 </head>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/jobs.css">
-<script rel="javascript" src="js/formValidation.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/jobs.css">
+<script rel="javascript" src="../js/formValidation.js"></script>
+</html>
 <body>
 
 <div class="grid-container">
 
     <div class="item1">
-        <img src="media/logo.png" alt="logo">
+        <img src="../media/logo.png" alt="logo">
         <!-- picture from https://www2.bc.edu/michael-adjibodou/Home.html -->
     </div>
 
     <div class="item2">
         <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li> <!--&nbsp; -->
-            <li><a href="menu.html">Menu</a></li>
+            <li><a href="../index.html">Home</a></li> <!--&nbsp; -->
+            <li><a href="menu.php">Menu</a></li>
             <li><a href="music.html">Music</a></li>
             <li><a href="jobs.html">Jobs</a></li>
         </ul>
@@ -30,7 +31,7 @@
         <p>Want to work at JavaJam? Fill out the form below to start your application. Required fields are marked
             with asterisk *</p>
 
-        <form action="show_post.php" method="post" class="jobs-form">
+        <form action="../php/show_post.php" method="post" class="jobs-form">
             <label for="formName">*Name:&nbsp;</label>
             <input type="text" name="name" id="formName" aria-required="true" required autofocus
                    pattern="^(\w+-?\w+)(\s{1}\w+-?\w+)+$"> <!-- match any dash in name or surname -->

@@ -3,22 +3,23 @@
 <head>
     <title>Case Study Part 4</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/coffeeMenu.css">
-    <script rel="javascript" src="js/menuPrices.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/coffeeMenu.css">
+    <script rel="javascript" src="../js/menuPrices.js"></script>
+</head>
 <body>
 
 <div class="grid-container">
 
     <div class="item1">
-        <img src="media/logo.png" alt="logo">
+        <img src="../media/logo.png" alt="logo">
         <!-- picture from https://www2.bc.edu/michael-adjibodou/Home.html -->
     </div>
 
     <div class="item2">
         <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li> <!--&nbsp; -->
-            <li><a href="menu.html">Menu</a></li>
+            <li><a href="../index.html">Home</a></li> <!--&nbsp; -->
+            <li><a href="menu.php">Menu</a></li>
             <li><a href="music.html">Music</a></li>
             <li><a href="jobs.html">Jobs</a></li>
         </ul>

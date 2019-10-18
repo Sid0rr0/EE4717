@@ -3,15 +3,16 @@
 <head>
     <title>Case Study Part 4</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/coffeeMenu.css">
-    <link rel="stylesheet" href="css/update.css">
+    <link rel="stylesheet" type = "text/css" href="../css/style.css">
+    <link rel="stylesheet" type = "text/css" href="../css/coffeeMenu.css">
+    <link rel="stylesheet" type = "text/css" href="../css/update.css">
+</head>
 <body>
 
 <div class="grid-container">
 
     <div class="item1">
-        <img src="media/logo.png" alt="logo">
+        <img src="../media/logo.png" alt="logo">
         <!-- picture from https://www2.bc.edu/michael-adjibodou/Home.html -->
     </div>
 
