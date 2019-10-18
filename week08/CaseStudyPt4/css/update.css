@@ -1,0 +1,9 @@
+.coffee-menu label {
+    margin: 0;
+    padding: 0;
+}
+
+td input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+}
