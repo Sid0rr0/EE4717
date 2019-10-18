@@ -15,11 +15,22 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
+    $name = "";
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["coffee_id"]. " - name: " . $row["coffee_name"] . "<br>";
+        if($row["coffee_name"] != $name) {
+            echo "\n";
+        }
+
+        echo "name: " . $row["coffee_name"] . " - type: " . $row["type"] . "|";
+
+        $name = $row["coffee_name"];
+
     }
 } else {
     echo "0 results";
 }
+
+
+
 $conn->close();
 ?>
