@@ -12,7 +12,7 @@
 <div class="grid-container">
 
     <div class="item1">
-        <img src="../media/logo.png" alt="logo">
+        <a href="../index.html"> <img src="../media/logo.png" alt="logo"> </a>
         <!-- picture from https://www2.bc.edu/michael-adjibodou/Home.html -->
     </div>
 
