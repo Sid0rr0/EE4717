@@ -6,6 +6,8 @@
     <link rel="stylesheet" type = "text/css" href="../css/style.css">
     <link rel="stylesheet" type = "text/css" href="../css/coffeeMenu.css">
     <link rel="stylesheet" type = "text/css" href="../css/update.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script rel="javascript" src="../js/update.js"></script>
 </head>
 <body>
 
@@ -35,40 +37,47 @@
 
                 if ($result->num_rows > 0) {
                     $arr = [];
-                    $cnt = 0;
-                    $id = 0;
+                    $cnt = 1;
                     while($row = $result->fetch_assoc()) {
-
+                        $id = $row['coffee_id'];
                         if($row["description"] == '') {
-                            $arr[$cnt] = $row["type"]." $".$row["price"];
-                            $id++;
+                            $arr[$cnt] = array($row["type"], $row["price"], $id);
                         } else {
-
                             echo '<tr>
                                     <td>
                                         <form action="#" class="menuForm" >
-                                            <label for="checkbox'.$cnt.'"><input type="checkbox" name="amount" id="checkbox'.$cnt.'" value="item'.$cnt.'"></label>
+                                            <label for="checkbox'.$cnt.'"><input type="checkbox" name="amount" id="checkbox'.$cnt.'" value="'.$cnt.'item" onchange="updateItem(event)"></label>
                                         </form>
                                     </td>';
                                 echo '<td class="menuName">'.$row["coffee_name"].'</td>';
                                 echo '<td>'.$row["description"].'<br/>';
+
+                                echo '<form action="../php/update_data.php" method="POST" class="newPriceForm" id="newPriceForm'
+                                            .$cnt.'">';
                                     foreach( $arr as $value ) {
-                                        echo "$value";
+                                        echo "$value[0]"." $"."$value[1]".'
+                                                <label for="newPrice'.$value[2].'"></label>
+                                                <input class="newPriceRow newPriceRow'.$cnt.'" name="newPrice'.$value[2]
+                                            .'" id="newPrice'
+                                        .$value[2].'" type="number" min="0" step="0.01" value="'.$value[1].'">';
                                     }
-                                    echo $row["type"]." $".$row["price"];
+                                    echo " ".$row["type"]." $".$row["price"].'
+                                            <label for="newPrice'.$id.'"></label>
+                                            <input class="newPriceRow newPriceRow'.$cnt.'" name="newPrice'.$id.'" id="newPrice'.$id.'" type="number"  step="0.01" min="0" value="'.$row["price"].'">
+                                            <input class="newPriceRow newPriceRow'.$cnt.'" name="submit'.$cnt.'" type="submit" id="newPriceButton'.$cnt.'" value="Update""> 
+                                        </form>';
                                 echo '</td>';
                             echo "</tr>";
                             $cnt++;
-                            $id = 0;
                             $arr = [];
                         }
                     }
                 } else {
                     echo "Sorry, no coffee on the menu.";
                 }
-
                 $conn->close();
             ?>
+
         </table>
     </div>
 
@@ -81,3 +90,4 @@
 
 </body>
 </html>
+
