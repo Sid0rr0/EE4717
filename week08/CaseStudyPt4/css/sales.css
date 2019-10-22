@@ -1,0 +1,17 @@
+.salesParentDiv {
+    padding: 10px;
+}
+
+.checkbox {
+    float: left;
+    padding: 0 10px;
+}
+
+.checkbox form input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+}
+
+.item3 {
+    min-height: 300px;
+}

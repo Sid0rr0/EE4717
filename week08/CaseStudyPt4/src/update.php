@@ -20,7 +20,8 @@
 
     <div class="item2">
         <ul class="nav-menu productPriceUpdate">
-            <li><a href="#">Product Price Update</a></li> <!--&nbsp; -->
+            <li><a href="update.php">Product Price Update</a></li>
+            <li><a href="sales.php">Daily Sales Report</a></li>
             <!--<li><a href="menu.html">Menu</a></li>
             <li><a href="music.html">Music</a></li>
             <li><a href="jobs.html">Jobs</a></li>-->
