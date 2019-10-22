@@ -3,3 +3,7 @@ insert into coffee (coffee_name, description, type, price) VALUES ('Cafe au Lait
 insert into coffee (coffee_name, description, type, price) VALUES ('Cafe au Lait', 'House blended coffee infused into a smooth, steamed milk.', 'Double', 3);
 insert into coffee (coffee_name, description, type, price) VALUES ('Iced Cappuccino', '', 'Single', 4.75);
 insert into coffee (coffee_name, description, type, price) VALUES ('Iced Cappuccino', 'Sweetened espresso blended with icy-cold milk and served in chilled glass.', 'Double', 5.75);
+
+insert into sale (dt) VALUES (NOW());
+
+insert into saleAmount (sale_id, coffee_id, amount) VALUES (1, 2, 2);
