@@ -15,3 +15,9 @@
 .item3 {
     min-height: 300px;
 }
+
+.saleDiv {
+    /*visibility: hidden;*/
+    margin-left: 60px;
+}
+

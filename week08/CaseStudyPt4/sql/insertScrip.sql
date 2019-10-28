@@ -5,5 +5,8 @@ insert into coffee (coffee_name, description, type, price) VALUES ('Iced Cappucc
 insert into coffee (coffee_name, description, type, price) VALUES ('Iced Cappuccino', 'Sweetened espresso blended with icy-cold milk and served in chilled glass.', 'Double', 5.75);
 
 insert into sale (dt) VALUES (NOW());
+insert into sale (dt) VALUES('2019-10-21 14:29:36');
 
 insert into saleAmount (sale_id, coffee_id, amount) VALUES (1, 2, 2);
+insert into saleAmount (sale_id, coffee_id, amount) VALUES (2, 2, 1);
+insert into saleAmount (sale_id, coffee_id, amount) VALUES (2, 4, 2);
