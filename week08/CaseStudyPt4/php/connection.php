@@ -9,36 +9,44 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT COUNT(*) FROM coffee;";
-$result = $conn->query($sql);
-$cnt = intval($result->fetch_assoc()["COUNT(*)"]);
+$category = "";
+for ($x = 1; $x <= 3; $x++) {
+    switch ($x) {
+        case 1:
+            $category = "Endless Cup";
+            break;
+        case 2:
+            $category = "Single";
+            break;
+        case 3:
+            $category = "Double";
+            break;
+        default:
+            $category = "";
+    }
 
-for ($x = 1; $x <= $cnt; $x++) {
-    $amt = 0;
-    $sql = "select sale.*, saleAmount.amount, c.coffee_id, c.coffee_name, c.type, c.price from saleAmount
-                        join
-                            sale on saleAmount.sale_id = sale.sale_id
-                        left join
-                            coffee c on saleAmount.coffee_id = c.coffee_id
-                        where
-                            c.coffee_id = $x;";
-
+    $sql = "select sale.*, saleAmount.amount, c.coffee_id, coffee_name, type, price from saleAmount
+                    join
+                        sale on saleAmount.sale_id = sale.sale_id
+                    left join
+                        coffee c on saleAmount.coffee_id = c.coffee_id
+                    where c.type = '$category;'";
+    //echo $sql;
     $result = $conn->query($sql);
-    $name = "";
+
+
+    echo "<div id='category".$x."'>";
+    echo "<h2>$category</h2><br>";
+    $total = 0;
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            $amt += intval($row["amount"]);
-            $name = $row["coffee_name"];
+            $total = doubleval($row["amount"])*doubleval($row["price"]);
         }
-
-
     } else {
         echo "0 results";
     }
-
-    echo $name." ".$amt."\n";
-
-
+    echo $total;
+    echo "</div>";
 }
 
 /*

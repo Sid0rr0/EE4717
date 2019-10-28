@@ -121,27 +121,45 @@
             </div>
         </div>
         <div class="saleDiv" id="saleDiv2">
-            <h2>Sold Today:</h2>
             <?php
 
             include('../php/credentials.php');
-            $sql = "select sale.*, saleAmount.amount, c.coffee_id, coffee_name, type, price from saleAmount
+            $category = "";
+            for ($x = 1; $x <= 3; $x++) {
+                switch ($x) {
+                case 1:
+                    $category = "Endless Cup";
+                    break;
+                case 2:
+                    $category = "Single";
+                    break;
+                case 3:
+                    $category = "Double";
+                    break;
+                default:
+                    $category = "";
+                }
+
+                $sql = "select sale.*, saleAmount.amount, c.coffee_id, coffee_name, type, price from saleAmount
                     join
                         sale on saleAmount.sale_id = sale.sale_id
                     left join
-                        coffee c on saleAmount.coffee_id = c.coffee_id;";
-            $result = $conn->query($sql);
+                        coffee c on saleAmount.coffee_id = c.coffee_id
+                    where c.type = '$category';";
+                $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo $row['dt']." ";
-                    echo $row['amount']." ";
-                    echo $row['coffee_name']." ";
-                    echo $row['type']." ";
-                    echo $row['price']."<br>";
+                echo "<div id='category".$x."'>";
+                echo "<h3>$category</h3>";
+                $total = 0;
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        $total += doubleval($row["amount"])*doubleval($row["price"]);
+                    }
+                } else {
+                    echo "0 results";
                 }
-            } else {
-                echo "0 results";
+                echo "$".$total."<br><br>";
+                echo "</div>";
             }
 
             $conn->close();
