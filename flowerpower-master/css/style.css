@@ -1,0 +1,594 @@
+@font-face {
+    font-family: "Signatra DEMO";
+    src: url("Signatra.otf") format('opentype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: SF pro;
+    src: url("SF-Pro-Display-Medium.otf") format('opentype');
+    font-style: normal;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+a{
+    text-decoration: none;
+}
+body{
+    margin:0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #272727;
+
+}
+#top-nav{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    z-index: 4;
+}
+#top-nav a{
+    text-decoration: none;
+    font-family: "Signatra DEMO", serif;
+    font-size: 30px;
+    color: white;
+}
+#top-nav a:hover{
+    color: #6ABB14;
+}
+.padding-span{
+    padding: 20px 30px 20px 30px ;
+}
+
+#content-container{
+    height: 100vh;
+}
+
+
+#bg img{
+    z-index: -1;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#logo img{
+    z-index: 5;
+    display: block;
+    min-width: 50vh;
+    max-width: 60vh;
+    height: auto;
+    margin: auto;
+    padding-top: 13vw;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter:         drop-shadow(5px 5px 5px #222);
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 3s; /* Firefox < 16 */
+    -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera < 12.1 */
+    animation: fadein 3s;
+}
+
+#content-container #arrow-down {
+    /*z-index: 0;*/
+    fill: white;
+    white-space: nowrap;
+    font-size: 10rem;
+    position: absolute;
+    right: 0;
+    bottom: 0.5rem;
+    left: 0;
+    margin: auto;
+    width: 60px;
+    height: auto;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter:         drop-shadow(5px 5px 5px #222);
+    animation: bounce 3s infinite;
+}
+
+#contact{
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    height: 100vh;
+    font-size: 24px;
+}
+
+#box{
+    display:flex;
+    flex-direction: row;
+    height: 400px;
+    margin-top: 70px;
+}
+#contact-left{
+    background: rgba(36, 145, 0, 0.9);
+    z-index: 2;
+    min-width: 12vw;
+    padding: 20px;
+    border-radius: 30px 0 0 30px;
+    color: white;
+}
+
+#contact-right form button {
+    margin-top: 20px;
+    border-radius: 20px;
+    height: auto;
+    font-weight: bold;
+    outline: none;
+    padding: 6px;
+    width: 100px;
+    font-size: 20px;
+    color: white;
+    background-color: #6ABB14;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#contact-right{
+    background: rgba(39, 39, 39, 0.9);
+    padding:20px;
+    z-index: 2;
+    width: 30vw;
+    min-width: 20vw;
+    border-radius: 0 30px 30px 0;
+
+}
+#content-container h2{
+    font-family: "SF pro", serif;
+    color: white;
+}
+
+#contactForm input{
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    caret-color:white;
+    font-family: "SF pro", serif;
+    color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    margin-bottom: 20px;
+    width: 60%;
+    border-bottom: 3px #fff solid;
+    font-size: 24px;
+}
+#message {
+    background: none;
+    color: white;
+    font-size: 18px;
+}
+
+button[type=submit] {
+    float: right;
+}
+
+#top-nav .active-page{
+    color: #6ABB14;
+;
+}
+fieldset{
+    border: none;
+}
+
+::placeholder{
+    font-family: "SF pro", serif;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+#main-content{
+    width: 100%;
+    height:auto;
+    background-color: #272727;
+}
+.section {
+    width: 100%;
+    padding-top:70px;
+    padding-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 60px;
+    font-family: "Signatra DEMO", serif;
+}
+
+.content-grid{
+    display: grid;
+    row-gap: 50px;
+    width: 80%;
+    grid-template-columns: 50vw 50vw;
+
+}
+.grid-item1{
+    grid-column: 1/1;
+    width: 350px;
+    height: 225px;
+    position: relative;
+    margin: 0 auto;
+}
+.grid-item2{
+    grid-column: 2/2;
+    width: 40vw;
+    height: 150px;
+    padding-top: 60px;
+    position: relative;
+    font-family: "SF pro", serif;
+    font-size: 20px;
+    padding-left: 20px;
+    color: white;
+    margin: 0 auto;
+
+}
+
+.grid-item3{
+    grid-column: 2/2;
+    grid-row: 2;
+    width: 350px;
+    height: 225px;
+    position: relative;
+    margin: 0 auto;
+
+
+}
+.grid-item4{
+    grid-row:2;
+    width: 40vw;
+    height: 150px;
+    padding-top: 60px;
+    position: relative;
+    font-family: "SF pro", serif;
+    font-size: 20px;
+    color: white;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 20%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 40%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.category-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    /*height: calc(100vh - 80px);//for footer to be visible */
+}
+.category{
+    filter: grayscale(100%);
+    text-align: center;
+    width: 300px;
+    background-size: cover;
+    font-family: "Signatra DEMO", serif;
+    font-size: 50px;
+    background-image: url("../assets/Grid-images/cherry-laithang-DEAIMSWjxxI-unsplash.jpg");
+    line-height: 300px;
+    text-shadow: 2px 2px black;
+    height: 300px;
+    color: white;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently                                supported by Chrome and Opera */
+}
+.category:hover{
+    filter: none;
+    transform: scale(1.1);
+}
+.category-content #indoor{
+    background-image: url("../assets/Grid-images/annie-spratt-01Wa3tPoQQ8-unsplash.jpg");
+}
+
+.shop-content{
+    padding-top: 85px;
+    display: flex;
+    max-width: 1140px;
+    margin: auto;
+    font-family: "SF pro", serif;
+    flex-direction: column;
+}
+
+.shop-header{
+    align-content: center;
+    width: 1140px;
+    height: 300px;
+    background-size: cover;
+    background-image: url("../assets/shopbg.png");
+}
+
+.shop-header-text{
+     margin-left: 140px;
+     margin-top: 40px;
+
+ }
+.shop-header-text h1{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+.shop-header-text p{
+    font-size: 30px;
+    margin-top: 15px;
+}
+.shop-banner h2{
+    font-size: 30px;
+    color: white;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.shop-grid{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.plant-card {
+    padding: 1%;
+    margin: 1%;
+    flex-grow: 1;
+    flex-basis: 16%;
+    display: flex;
+    flex-direction: column;
+    max-width: 16%;
+    align-items: center;
+
+    border-radius: 20px;
+    background-color: white;
+}
+
+.plant-image img{
+    object-fit: contain;
+    height: 230px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.plant-info{
+    margin-top: auto;
+    text-align: center;
+}
+.plant-info h5{
+     margin: 5px;
+ }
+.plant-info h6{
+    margin: 5px;
+}
+
+.plant-card button{
+    border-radius: 20px;
+    height: auto;
+    font-weight: bold;
+    outline: none;
+    padding: 6px;
+    width: 80px;
+    font-size: 10px;
+    color: white;
+    background-color: #6ABB14;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+.plant-card button:hover{
+    transform: scale(1.1);
+}
+
+#cart-wrap{
+    margin-top: 70px ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#cart{
+    width: 50em;
+    background-color: white;
+    border-radius: 25px;
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#cart table{
+    width: 100%;
+    font-family: "SF pro", serif;
+    text-align: left;
+}
+
+#cart table input{
+    color: black;
+    padding:5px;
+    border: 1px solid black;
+    margin: 0;
+    width: 50px;
+    caret-color: black;
+
+}
+
+.cart-image img{
+    object-fit: contain;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    display: block;
+    float: left;
+    margin-right: 30px;
+}
+.cart-desc{
+    padding-top: 30px;
+    height: 100%;
+    width: auto;
+}
+.cart-desc a{
+    font-size: 13px;
+    text-decoration: none;
+    color: rgba(30, 30, 30, 0.57);
+    position: relative;
+    bottom: 1px;
+}
+.cart-buttons{
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 20px;
+ }
+.cart-buttons button:hover{
+    transform: scale(1.1);
+}
+.cart-buttons button:nth-child(1){
+    background-color: white;
+    border-width: 2px;
+    border-color:#6ABB14 ;
+    color: #6ABB14 ;
+}
+.cart-buttons button{
+    border-radius: 20px;
+    height: auto;
+    font-weight: bold;
+    outline: none;
+    padding: 10px;
+    width: auto;
+    font-size: 15px;
+    color: white;
+    background-color: #6ABB14;
+}
+
+#cart h2{
+    font-size: 30px;
+    color: black;
+    font-family: "SF pro", serif;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.empty-cart{
+    padding: 30px;
+}
+#cart-checkout{
+    display: none;
+    flex-direction: column;
+}
+
+#cart-checkout input{
+    color: black;
+    display: flex;
+    border:1px solid gray;
+    caret-color: black;
+    width: 400px;
+    height: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+#cartForm{
+}
+#cart-checkout input::placeholder{
+    font-family: "SF pro", serif;
+    color: black;
+    opacity: 0.5;
+}
+
+hr{
+    margin: 1px;
+}
+#make-purchase button{
+    border-radius: 20px;
+    height: auto;
+    font-weight: bold;
+    outline: none;
+    padding: 10px;
+    width: auto;
+    font-size: 15px;
+    color: white;
+    background-color: #6ABB14;
+}
+
+footer {
+    border-top: solid 1px #6ABB14;
+    color: white;
+    font-size: 20px;
+    font-family: "SF pro", serif;
+    height: 80px;
+    width: 99vw;
+}
+
+footer div {
+    text-align: center;
+    margin: 15px;
+}
+
+footer a {
+    color: #6ABB14;
+}
+
+.allButFooter {
+    min-height: calc(99vh - 80px);
+    overflow-x: hidden;
+    /*margin-bottom: 80px*/
+}
+
+#thanks {
+    width: 99vw;
+    height: calc(94vh - 80px);
+    color: white;
+    font-family: "SF pro", serif;
+    text-align: center;
+    vertical-align: middle;
+    line-height: calc(90vh - 80px);
+
+
+}

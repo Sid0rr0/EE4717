@@ -1,0 +1,20 @@
+<?php
+
+$dbhost = "[Host]";
+$dbuser = "[Username]";
+$dbpass = "[Password]";
+$db = "[Database]";
+
+// Create connection
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass,$db);
+
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Uncomment to check connection
+/*
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
